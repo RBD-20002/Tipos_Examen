@@ -48,6 +48,27 @@ public class Tienda {
     }
 
     public void AgregarLibro() {
+        System.out.println("Introduce el titulo del libro: ");
+        String titulo = sc.nextLine();
+        System.out.println("-".repeat(30));
 
+        System.out.println("Introduce el autor del libro: ");
+        String autor = sc.nextLine();
+        System.out.println("-".repeat(30));
+
+        System.out.println("Introduce el año de publicacion: ");
+        int anoPub = Integer.parseInt(sc.nextLine());
+        System.out.println("-".repeat(30));
+
+        System.out.println("Introduce el numero de paginas: ");
+        int numPag = Integer.parseInt(sc.nextLine());
+        System.out.println("-".repeat(30));
+
+        System.out.println("Introduce el precio del libro: ");
+        double precio = Double.parseDouble(sc.nextLine());
+        System.out.println("-".repeat(30));
+
+        libros.add(new Libro(titulo,autor,anoPub,numPag,precio));
     }
+
 }
