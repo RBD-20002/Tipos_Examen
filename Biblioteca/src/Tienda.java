@@ -40,6 +40,11 @@ public class Tienda {
         if(libros.isEmpty()) {
             System.out.println("No hay libros para editar");
         }
+        int pos = 0;
+        for (Libro libro : libros) {
+            System.out.println(pos + " " + libro.getTitulo());
+            pos++;
+        }
         for(int i = 0; i < libros.size(); i++) {
             System.out.println((i+1)+" "+libros.get(i).getTitulo()+" $"+libros.get(i).getPrecio());
         }
@@ -165,11 +170,13 @@ public class Tienda {
         libro.setTitulo(sc.nextLine());
         System.out.println("Dato modificado correctamente");
     }
+
     public void ModificarAutor(Libro libro) {
         System.out.println("Introduce el nuevo autor: ");
         libro.setAutor(sc.nextLine());
         System.out.println("Dato modificado correctamente");
     }
+
     public void ModificarAnoPub(Libro libro) {
         int anoPub = 0;
         while(anoPub < 1000 || anoPub > 2025) {
@@ -186,6 +193,7 @@ public class Tienda {
         libro.setAnoPub(anoPub);
         System.out.println("Dato modificado correctamente");
     }
+
     public void ModificarNumPag(Libro libro) {
        int numPag = 0;
        while(numPag < 1) {
@@ -202,6 +210,7 @@ public class Tienda {
         libro.setNumPag(numPag);
         System.out.println("Dato modificado correctamente");
     }
+
     public void ModificarPrecio(Libro libro) {
         double precio = 0;
         while(precio < 1) {

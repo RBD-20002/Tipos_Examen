@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Tienda {
@@ -102,5 +103,42 @@ public class Tienda {
                 System.out.println("ERROR: Ingresa un dato valido");
             }
         }
+    }
+
+    public void EditarVideoJuego() {
+        System.out.println("VideoJuegos: ");
+        ListaDeVideoJuegos();
+        int pos2 = -1;
+        while(pos2 < 1 || pos2 > juegos.size()) {
+            try {
+                System.out.println("Elige que videojuego quieres modificar: ");
+                pos2 = Integer.parseInt(sc.nextLine());
+                if(pos2 < 1 || pos2 > juegos.size()) {
+                    System.out.println("Posicion invalida, intenta de nuevo");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un dato valido");
+            }
+        }
+        Juego elegido = juegos.get(pos2 - 1);
+        int opcion;
+        do {
+            Menu2();
+            try {
+                System.out.println("Elegi que elige una opcion: ");
+                opcion = Integer.parseInt(sc.nextLine());
+                switch (opcion) {
+                    case 1 -> ModificarTitulo(elegido);
+                    case 2 -> ModificarAnoPub(elegido);
+                    case 3 -> ModificarPlataforma(elegido);
+                    case 4 -> ModificarPrecio(elegido);
+                    case 5 -> System.out.println("Hasta luego");
+                    default -> System.out.println("opcion invalida");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un dato valido");
+                opcion = 0;
+            }
+        } while(opcion != 5);
     }
 }
