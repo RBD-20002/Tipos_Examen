@@ -54,6 +54,19 @@ public class Libro {
         } else this.precio = precio;
     }
 
+    public static boolean ValidarAnoPub(int anoPub) {
+        if(anoPub >= 1000 && anoPub <= 2025) {
+            return true;
+        }
+        return false;
+    }
+    public static boolean ValidarNumPag(int numPag) {
+        if(numPag <= 0) {
+            return false;
+        }
+        return true;
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Libro: ")

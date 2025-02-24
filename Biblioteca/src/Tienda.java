@@ -16,7 +16,7 @@ public class Tienda {
         System.out.println("|3. Editar datos de libro|"); /*H*/
         System.out.println("|4. Eliminar un libro    |"); /*H*/
         System.out.println("|5. Filtrar por nombre   |"); /*H*/
-        System.out.println("|6. Numero de libros     |");
+        System.out.println("|6. Numero de libros     |"); /*H*/
         System.out.println("|7. Salir                |"); /*H*/
         System.out.println(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
     }
@@ -73,10 +73,18 @@ public class Tienda {
 
         System.out.println("Introduce el año de publicacion: ");
         int anoPub = Integer.parseInt(sc.nextLine());
+        while(!Libro.ValidarAnoPub(anoPub)) {
+            System.out.println("El año es invalido, vuelve a intentar");
+            anoPub = Integer.parseInt(sc.nextLine());
+        }
         System.out.println("-".repeat(30));
 
         System.out.println("Introduce el numero de paginas: ");
         int numPag = Integer.parseInt(sc.nextLine());
+        while(!Libro.ValidarNumPag(numPag)) {
+            System.out.println("El numero de paginas es invalido, vuelve a intentar");
+            numPag = Integer.parseInt(sc.nextLine());
+        }
         System.out.println("-".repeat(30));
 
         System.out.println("Introduce el precio del libro: ");
@@ -160,11 +168,11 @@ public class Tienda {
 
     public void FiltrarPorTitulo() {
         System.out.println("Introduce un titulo: ");
-        String tituloPro = sc.nextLine();
+        String tituloPro = sc.nextLine().toLowerCase();
 
         boolean encontrado = false;
         for(int i = 0; i < libros.size(); i++) {
-            if(libros.get(i).getTitulo().toLowerCase().equalsIgnoreCase(tituloPro)) {
+            if(libros.get(i).getTitulo().toLowerCase().contains(tituloPro)) {
             System.out.println((i+1)+" "+libros.get(i).getTitulo()+" $"+libros.get(i).getPrecio());
             encontrado = true;
             }
