@@ -46,10 +46,6 @@ public class Tienda {
     }
 
     public void EliminarLibro() {
-        if(libros.isEmpty()) {
-            System.out.println("No hay libros para eliminar");
-            return;
-        }
         MostrarLibroAbreviado();
         int pos = -1;
         while(pos < 1 || pos > libros.size()) {

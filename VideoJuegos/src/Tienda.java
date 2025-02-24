@@ -10,9 +10,9 @@ public class Tienda {
         System.out.println("|________________________|");
         System.out.println("|       BIENVENIDO       |");
         System.out.println("|1. Agregar VideoJuego   |");
-        System.out.println("|2. Mostrar VideoJuegos  |");
-        System.out.println("|3. Lista de VideoJuegos |");
-        System.out.println("|4. Eliminar VideoJuego  |");
+        System.out.println("|2. Mostrar VideoJuegos  |"); /*H*/
+        System.out.println("|3. Lista de VideoJuegos |"); /*H*/
+        System.out.println("|4. Eliminar VideoJuego  |"); /*H*/
         System.out.println("|5. Editar VideoJuego    |");
         System.out.println("|6. Filtrar por titulo   |");
         System.out.println("|7. Numero de VideoJuegos|");
@@ -53,4 +53,23 @@ public class Tienda {
             System.out.println((i+1)+" "+juegos.get(i).getTitulo()+" $"+juegos.get(i).getPrecio());
         }
     }
+
+    public void EleminarVideoJuego() {
+        ListaDeVideoJuegos();
+        int pos = -1;
+        while(pos < 1 || pos > juegos.size()) {
+            try {
+                System.out.println("Introduce la posicion del juego que quieres eliminar: ");
+                pos = Integer.parseInt(sc.nextLine());
+                if(pos < 1 || pos > juegos.size()) {
+                    System.out.println("Posicion invalida, intenta de nuevo");
+                    System.out.println("-".repeat(30));
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Dato invalido, vuelve a intentar");
+            }
+        }
+    }
+
+
 }
