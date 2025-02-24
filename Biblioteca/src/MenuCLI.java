@@ -11,7 +11,6 @@ public class MenuCLI {
             tienda.Menu1();
             System.out.println("Introduce una opcion: ");
             opcion = Integer.parseInt(sc.nextLine());
-
             switch (opcion) {
                 case 1:
                     tienda.MostrarLibros();
@@ -33,6 +32,8 @@ public class MenuCLI {
                     break;
                 case 7:
                     System.out.println("Hasta luego, vuelve pronto");
+                default:
+                    System.out.println("Opcion invalida");
             }
         } while(opcion != 7);
     }
