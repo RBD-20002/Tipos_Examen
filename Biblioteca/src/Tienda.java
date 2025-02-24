@@ -122,12 +122,7 @@ public class Tienda {
     }
 
     public void EditarDatosLibros() {
-        if(libros.isEmpty()) {
-            System.out.println("No hay libros almacenados");
-            return;
-        }
         MostrarLibroAbreviado();
-        System.out.println("Elige el libro que quieres modificar: ");
         int pos2 = -1;
         while(pos2 < 1 || pos2 > libros.size()) {
             try {
@@ -143,7 +138,6 @@ public class Tienda {
 
         Libro elegido = libros.get(pos2-1);
         int opcion;
-
         do {
             Menu2();
             try {

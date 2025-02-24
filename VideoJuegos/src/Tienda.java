@@ -90,4 +90,17 @@ public class Tienda {
             System.out.println("No se encuentran videojuegos con la palabra "+tituloPro);
         }
     }
+
+    public void EditarDatosVideoJuego() {
+        ListaDeVideoJuegos();
+        int pos2 = -1;
+        while(pos2 < 1 || pos2 > juegos.size()) {
+            try {
+                System.out.println("Elige que videojuego quieres modificar: ");
+                pos2 = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un dato valido");
+            }
+        }
+    }
 }
