@@ -51,10 +51,17 @@ public class Tienda {
             return;
         }
         MostrarLibroAbreviado();
-        int pos = Integer.parseInt(sc.nextLine());
-        while(pos > libros.size()) {
-            System.out.println("Posicion invalida, vuelve a intentarlo");
-            pos = Integer.parseInt(sc.nextLine());
+        int pos = -1;
+        while(pos < 1 || pos > libros.size()) {
+            try{
+                System.out.println("Elige la posicion del libro a eliminar");
+                pos = Integer.parseInt(sc.nextLine());
+                if(pos < 1 || pos > libros.size()) {
+                    System.out.println("Posicion invalida, intenta denuvo");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un numero valido");
+            }
         }
         libros.remove(pos-1);
         System.out.println("Libro eliminado correctamente");
@@ -99,30 +106,43 @@ public class Tienda {
         }
         MostrarLibroAbreviado();
         System.out.println("Elige el libro que quieres modificar: ");
-        int pos = Integer.parseInt(sc.nextLine());
-        while(pos > libros.size()) {
-            System.out.println("Posicion invalida");
-            pos = Integer.parseInt(sc.nextLine());
+        int pos2 = -1;
+        while(pos2 < 1 || pos2 > libros.size()) {
+            try {
+                System.out.println("Elige el libro que quieres modificar: ");
+                pos2 = Integer.parseInt(sc.nextLine());
+                if(pos2 < 1 || pos2 > libros.size()) {
+                    System.out.println("Posicion invalida, vuelve a intentarlo");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un numero valido");
+            }
         }
 
-        Libro elegido = libros.get(pos-1);
+        Libro elegido = libros.get(pos2-1);
         int opcion;
 
         do {
             Menu2();
-            System.out.println("Elige que dato quieres modificar (o 6 para volver): ");
-            opcion = Integer.parseInt(sc.nextLine());
-            switch (opcion) {
-                case 1 -> ModificarTitulo(elegido);
-                case 2 -> ModificarAutor(elegido);
-                case 3 -> ModificarAnoPub(elegido);
-                case 4 -> ModificarNumPag(elegido);
-                case 5 -> ModificarPrecio(elegido);
-                case 6 -> System.out.println("Hasta luego");
-                default -> System.out.println("Opcion invalida, vuelve a intentar");
+            try {
+                System.out.println("Elige que dato quieres modificar (o 6 para volver): ");
+                opcion = Integer.parseInt(sc.nextLine());
+                switch (opcion) {
+                    case 1 -> ModificarTitulo(elegido);
+                    case 2 -> ModificarAutor(elegido);
+                    case 3 -> ModificarAnoPub(elegido);
+                    case 4 -> ModificarNumPag(elegido);
+                    case 5 -> ModificarPrecio(elegido);
+                    case 6 -> System.out.println("Hasta luego");
+                    default -> System.out.println("Opcion invalida, vuelve a intentar");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa una opcion valida");
+                opcion = 0;
             }
         } while(opcion != 6);
     }
+
     public void ModificarTitulo(Libro libro) {
         System.out.println("Introduce el nuevo titulo: ");
         libro.setTitulo(sc.nextLine());
@@ -134,31 +154,49 @@ public class Tienda {
         System.out.println("Dato modificado correctamente");
     }
     public void ModificarAnoPub(Libro libro) {
-        System.out.println("Introduce el nuevo año de publicacion: ");
-        int anoPub = Integer.parseInt(sc.nextLine());
-        while(anoPub <= 1000 || anoPub > 2025) {
-            System.out.println("El año es invalido, vuelve a intentar");
-            anoPub = Integer.parseInt(sc.nextLine());
+        int anoPub = 0;
+        while(anoPub < 1000 || anoPub > 2025) {
+            try {
+                System.out.println("Introduce el nuevo año de publicacion: ");
+                anoPub = Integer.parseInt(sc.nextLine());
+                if(anoPub < 1000 || anoPub > 2025) {
+                    System.out.println("El año es invalido, intenta de nuevo");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un numero valido");
+            }
         }
         libro.setAnoPub(anoPub);
         System.out.println("Dato modificado correctamente");
     }
     public void ModificarNumPag(Libro libro) {
-        System.out.println("Introduce el nuevo numero de paginas: ");
-        int numPag = Integer.parseInt(sc.nextLine());
-        while(numPag < 1) {
-            System.out.println("El numero de paginas es invalido, vuelve a intentarlo");
-            numPag = Integer.parseInt(sc.nextLine());
-        }
+       int numPag = 0;
+       while(numPag < 1) {
+           try {
+               System.out.println("Introduce el nuevo numero de paginas: ");
+               numPag = Integer.parseInt(sc.nextLine());
+               if(numPag < 0) {
+                   System.out.println("El numero de paginas es invalido");
+               }
+           } catch (NumberFormatException e) {
+               System.out.println("ERROR: Ingresa un numero valido");
+           }
+       }
         libro.setNumPag(numPag);
         System.out.println("Dato modificado correctamente");
     }
     public void ModificarPrecio(Libro libro) {
-        System.out.println("Introduce el nuevo precio: ");
-        double precio = Double.parseDouble(sc.nextLine());
+        double precio = 0;
         while(precio < 1) {
-            System.out.println("El precio es invalido, vuelve a intentar");
-            precio = Double.parseDouble(sc.nextLine());
+            try {
+                System.out.println("Introduce el nuevo precio: ");
+                precio = Double.parseDouble(sc.nextLine());
+                if(precio < 1) {
+                    System.out.println("El precio ");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un precio valido");
+            }
         }
         libro.setPrecio(precio);
         System.out.println("Dato modificado correctamente");
