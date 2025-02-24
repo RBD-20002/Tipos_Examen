@@ -10,19 +10,19 @@ public class Tienda {
         System.out.println("|       BIENVENIDO       |");
         System.out.println("|1. Mostrar Libros       |"); /*H*/
         System.out.println("|2. Añadir Libro         |"); /*H*/
-        System.out.println("|3. Editar datos de libro|");
+        System.out.println("|3. Editar datos de libro|"); /*H*/
         System.out.println("|4. Eliminar un libro    |"); /*H*/
-        System.out.println("|5. Filtrar por nombre   |");
+        System.out.println("|5. Filtrar por nombre   |"); /*H*/
         System.out.println("|6. Salir                |"); /*H*/
     }
     public void Menu2() {
         System.out.println("|   MODIFICAR DATOS   |");
-        System.out.println("|1. Titulo            |");
-        System.out.println("|2. Autor             |");
-        System.out.println("|3. Año de publicacion|");
-        System.out.println("|4. Numero de paginas |");
-        System.out.println("|5. Precio            |");
-        System.out.println("|6. Volver al inicio  |");
+        System.out.println("|1. Titulo            |"); /*H*/
+        System.out.println("|2. Autor             |"); /*H*/
+        System.out.println("|3. Año de publicacion|"); /*H*/
+        System.out.println("|4. Numero de paginas |"); /*H*/
+        System.out.println("|5. Precio            |"); /*H*/
+        System.out.println("|6. Volver al inicio  |"); /*H*/
     }
 
     public void MostrarLibros() {
@@ -147,5 +147,21 @@ public class Tienda {
         }
         libro.setPrecio(precio);
         System.out.println("Dato modificado correctamente");
+    }
+
+    public void FiltrarPorTitulo() {
+        System.out.println("Introduce un titulo: ");
+        String tituloPro = sc.nextLine();
+
+        boolean encontrado = false;
+        for(int i = 0; i < libros.size(); i++) {
+            if(libros.get(i).getTitulo().toLowerCase().equalsIgnoreCase(tituloPro)) {
+            System.out.println((i+1)+" "+libros.get(i).getTitulo()+" $"+libros.get(i).getPrecio());
+            encontrado = true;
+            }
+        }
+        if(!encontrado) {
+            System.out.println("No se encuentran libros que tienen ese titulo: "+tituloPro);
+        }
     }
 }
