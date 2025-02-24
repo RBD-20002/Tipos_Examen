@@ -76,7 +76,9 @@ public class Tienda {
         System.out.println("Elige el libro que quieres modificar: ");
         int pos = Integer.parseInt(sc.nextLine());
         libros.get(pos-1);
+        do {
 
+        } while(pos != 6);
     }
     public void ModificarTitulo(Libro libro) {
         System.out.println("Introduce el nuevo titulo: ");
