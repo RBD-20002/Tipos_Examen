@@ -15,7 +15,7 @@ public class Tienda {
         System.out.println("|4. Eliminar VideoJuego  |"); /*H*/
         System.out.println("|5. Editar VideoJuego    |");
         System.out.println("|6. Filtrar por titulo   |");
-        System.out.println("|7. Numero de VideoJuegos|");
+        System.out.println("|7. Numero de VideoJuegos|"); /*H*/
         System.out.println("|8. Salir                |");
         System.out.println("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
     }
@@ -71,5 +71,11 @@ public class Tienda {
         }
     }
 
+    public void NumeroDeJuegos() {
+        System.out.println("Numero de juegos almacenados: "+juegos.size());
+    }
 
+    public void FiltrarPorTitulo() {
+
+    }
 }
