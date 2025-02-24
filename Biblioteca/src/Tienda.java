@@ -121,6 +121,7 @@ public class Tienda {
         }
         System.out.println("-".repeat(30));
 
+        System.out.println("Libro creado correctamente");
         libros.add(new Libro(titulo,autor,anoPub,numPag,precio));
     }
 
