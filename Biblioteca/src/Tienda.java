@@ -81,27 +81,42 @@ public class Tienda {
         }
 
         Libro elegido = libros.get(pos-1);
+        int opcion;
 
         do {
             Menu2();
             System.out.println("Elige que dato quieres modificar (o 6 para volver): ");
-            int opcion = Integer.parseInt(sc.nextLine());
+            opcion = Integer.parseInt(sc.nextLine());
             switch (opcion) {
                 case 1:
                     ModificarTitulo(elegido);
                     break;
+                case 2:
+                    ModificarAutor(elegido);
+                    break;
+                case 3:
+                    ModificarAnoPub(elegido);
+                    break;
+                case 4:
+                    ModificarNumPag(elegido);
+                    break;
+                case 5:
+                    ModificarPrecio(elegido);
+                    break;
+                case 6:
+                    System.out.println("Hasta luego");
             }
-        } while(pos != 6);
+        } while(opcion != 6);
     }
     public void ModificarTitulo(Libro libro) {
         System.out.println("Introduce el nuevo titulo: ");
-        String titulo = sc.nextLine();
-        libro.setTitulo(titulo);
+        libro.setTitulo(sc.nextLine());
+        System.out.println("Dato modificado correctamente");
     }
     public void ModificarAutor(Libro libro) {
         System.out.println("Introduce el nuevo autor: ");
-        String autor = sc.nextLine();
         libro.setAutor(sc.nextLine());
+        System.out.println("Dato modificado correctamente");
     }
     public void ModificarAnoPub(Libro libro) {
         System.out.println("Introduce el nuevo año de publicacion: ");
@@ -111,6 +126,7 @@ public class Tienda {
             anoPub = Integer.parseInt(sc.nextLine());
         }
         libro.setAnoPub(anoPub);
+        System.out.println("Dato modificado correctamente");
     }
     public void ModificarNumPag(Libro libro) {
         System.out.println("Introduce el nuevo numero de paginas: ");
@@ -120,6 +136,7 @@ public class Tienda {
             numPag = Integer.parseInt(sc.nextLine());
         }
         libro.setNumPag(numPag);
+        System.out.println("Dato modificado correctamente");
     }
     public void ModificarPrecio(Libro libro) {
         System.out.println("Introduce el nuevo precio: ");
@@ -129,5 +146,6 @@ public class Tienda {
             precio = Double.parseDouble(sc.nextLine());
         }
         libro.setPrecio(precio);
+        System.out.println("Dato modificado correctamente");
     }
 }
