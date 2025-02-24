@@ -58,10 +58,7 @@ public class Libro {
         return anoPub >= 1000 && anoPub <= 2025;
     }
     public static boolean ValidarNumPag(int numPag) {
-        if(numPag <= 0) {
-            return false;
-        }
-        return true;
+        return numPag > 0;
     }
 
     public String toString() {
