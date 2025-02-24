@@ -122,6 +122,7 @@ public class Tienda {
     }
 
     public void EditarDatosLibros() {
+        System.out.println("Libros: ");
         MostrarLibroAbreviado();
         int pos2 = -1;
         while(pos2 < 1 || pos2 > libros.size()) {
