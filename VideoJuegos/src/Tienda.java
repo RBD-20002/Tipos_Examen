@@ -20,6 +20,7 @@ public class Tienda {
         System.out.println("|8. Salir                |");
         System.out.println("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
     }
+
     public void Menu2() {
         System.out.println("|_____________________|");
         System.out.println("|     EDITAR DATOS    |");
@@ -30,6 +31,7 @@ public class Tienda {
         System.out.println("|5. Volver atras      |");
         System.out.println("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
     }
+
     public void Menu3() {
         System.out.println("|PLATAFORMAS|");
         System.out.println("|1. PS3     |");
