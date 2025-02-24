@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,13 +9,16 @@ public class Tienda {
     Scanner sc = new Scanner(System.in);
 
     public void Menu1() {
+        System.out.println(" ________________________");
         System.out.println("|       BIENVENIDO       |");
         System.out.println("|1. Mostrar Libros       |"); /*H*/
         System.out.println("|2. Añadir Libro         |"); /*H*/
         System.out.println("|3. Editar datos de libro|"); /*H*/
         System.out.println("|4. Eliminar un libro    |"); /*H*/
         System.out.println("|5. Filtrar por nombre   |"); /*H*/
-        System.out.println("|6. Salir                |"); /*H*/
+        System.out.println("|6. Numero de libros     |");
+        System.out.println("|7. Salir                |"); /*H*/
+        System.out.println(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
     }
     public void Menu2() {
         System.out.println("|   MODIFICAR DATOS   |");
@@ -26,17 +31,27 @@ public class Tienda {
     }
 
     public void MostrarLibros() {
+        if(libros.isEmpty()) {
+            System.out.println("No hay libros para mostrar");
+        }
         for(Libro libro : libros) {
             System.out.println(libro.toString());
         }
     }
     public void MostrarLibroAbreviado() {
+        if(libros.isEmpty()) {
+            System.out.println("No hay libros para editar");
+        }
         for(int i = 0; i < libros.size(); i++) {
             System.out.println((i+1)+" "+libros.get(i).getTitulo()+" $"+libros.get(i).getPrecio());
         }
     }
 
     public void EliminarLibro() {
+        if(libros.isEmpty()) {
+            System.out.println("No hay libros para eliminar");
+            return;
+        }
         MostrarLibroAbreviado();
         int pos = Integer.parseInt(sc.nextLine());
         while(pos > libros.size()) {
@@ -72,6 +87,10 @@ public class Tienda {
     }
 
     public void EditarDatosLibros() {
+        if(libros.isEmpty()) {
+            System.out.println("No hay libros almacenados");
+            return;
+        }
         MostrarLibroAbreviado();
         System.out.println("Elige el libro que quieres modificar: ");
         int pos = Integer.parseInt(sc.nextLine());
@@ -88,23 +107,13 @@ public class Tienda {
             System.out.println("Elige que dato quieres modificar (o 6 para volver): ");
             opcion = Integer.parseInt(sc.nextLine());
             switch (opcion) {
-                case 1:
-                    ModificarTitulo(elegido);
-                    break;
-                case 2:
-                    ModificarAutor(elegido);
-                    break;
-                case 3:
-                    ModificarAnoPub(elegido);
-                    break;
-                case 4:
-                    ModificarNumPag(elegido);
-                    break;
-                case 5:
-                    ModificarPrecio(elegido);
-                    break;
-                case 6:
-                    System.out.println("Hasta luego");
+                case 1 -> ModificarTitulo(elegido);
+                case 2 -> ModificarAutor(elegido);
+                case 3 -> ModificarAnoPub(elegido);
+                case 4 -> ModificarNumPag(elegido);
+                case 5 -> ModificarPrecio(elegido);
+                case 6 -> System.out.println("Hasta luego");
+                default -> System.out.println("Opcion invalida, vuelve a intentar");
             }
         } while(opcion != 6);
     }
@@ -163,5 +172,9 @@ public class Tienda {
         if(!encontrado) {
             System.out.println("No se encuentran libros que tienen ese titulo: "+tituloPro);
         }
+    }
+
+    public void NumeroDeLibros() {
+        System.out.println("El numero de libros es: "+libros.size());
     }
 }
