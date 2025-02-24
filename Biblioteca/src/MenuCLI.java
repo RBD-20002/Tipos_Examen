@@ -32,6 +32,7 @@ public class MenuCLI {
                     break;
                 case 7:
                     System.out.println("Hasta luego, vuelve pronto");
+                    break;
                 default:
                     System.out.println("Opcion invalida");
             }
