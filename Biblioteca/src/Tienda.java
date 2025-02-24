@@ -76,24 +76,49 @@ public class Tienda {
         String autor = sc.nextLine();
         System.out.println("-".repeat(30));
 
-        System.out.println("Introduce el año de publicacion: ");
-        int anoPub = Integer.parseInt(sc.nextLine());
-        while(!Libro.ValidarAnoPub(anoPub)) {
-            System.out.println("El año es invalido, vuelve a intentar");
-            anoPub = Integer.parseInt(sc.nextLine());
+        int anoPub = 0;
+        while(anoPub < 1000 || anoPub > 2025) {
+            try {
+                System.out.println("Introduce el año de publicacion: ");
+                anoPub = Integer.parseInt(sc.nextLine());
+                if(anoPub < 1000 || anoPub > 2025) {
+                    System.out.println("El año es invalido, intenta de nuevo");
+                    System.out.println("-".repeat(30));
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un año valido");
+            }
         }
         System.out.println("-".repeat(30));
 
-        System.out.println("Introduce el numero de paginas: ");
-        int numPag = Integer.parseInt(sc.nextLine());
-        while(!Libro.ValidarNumPag(numPag)) {
-            System.out.println("El numero de paginas es invalido, vuelve a intentar");
-            numPag = Integer.parseInt(sc.nextLine());
+        int numPag = 0;
+        while(numPag < 1) {
+            try {
+                System.out.println("Introduce el numero de paginas: ");
+                numPag = Integer.parseInt(sc.nextLine());
+                if(numPag < 1) {
+                    System.out.println("El numero de paginas es invalido, intenta de nuevo");
+                    System.out.println("-".repeat(30));
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un numero valido");
+            }
         }
         System.out.println("-".repeat(30));
 
-        System.out.println("Introduce el precio del libro: ");
-        double precio = Double.parseDouble(sc.nextLine());
+        double precio = 0;
+        while(precio < 1) {
+            try {
+                System.out.println("Introduce el precio del libro: ");
+                precio = Double.parseDouble(sc.nextLine());
+                if(precio < 1) {
+                    System.out.println("El precio es invalido, intenta de nuevo");
+                    System.out.println("-".repeat(30));
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un precio valido");
+            }
+        }
         System.out.println("-".repeat(30));
 
         libros.add(new Libro(titulo,autor,anoPub,numPag,precio));
