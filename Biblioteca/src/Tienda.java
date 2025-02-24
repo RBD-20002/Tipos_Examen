@@ -8,12 +8,12 @@ public class Tienda {
 
     public void Menu1() {
         System.out.println("|       BIENVENIDO       |");
-        System.out.println("|1. Mostrar Libros       |");
-        System.out.println("|2. Añadir Libro         |");
+        System.out.println("|1. Mostrar Libros       |"); /*H*/
+        System.out.println("|2. Añadir Libro         |"); /*H*/
         System.out.println("|3. Editar datos de libro|");
-        System.out.println("|4. Eliminar un libro    |");
+        System.out.println("|4. Eliminar un libro    |"); /*H*/
         System.out.println("|5. Filtrar por nombre   |");
-        System.out.println("|6. Salir                |");
+        System.out.println("|6. Salir                |"); /*H*/
     }
     public void Menu2() {
         System.out.println("|   MODIFICAR DATOS   |");
@@ -71,4 +71,48 @@ public class Tienda {
         libros.add(new Libro(titulo,autor,anoPub,numPag,precio));
     }
 
+    public void EditarDatosLibros() {
+        MostrarLibroAbreviado();
+        System.out.println("Elige el libro que quieres modificar: ");
+        int pos = Integer.parseInt(sc.nextLine());
+        libros.get(pos-1);
+
+    }
+    public void ModificarTitulo(Libro libro) {
+        System.out.println("Introduce el nuevo titulo: ");
+        String titulo = sc.nextLine();
+        libro.setTitulo(titulo);
+    }
+    public void ModificarAutor(Libro libro) {
+        System.out.println("Introduce el nuevo autor: ");
+        String autor = sc.nextLine();
+        libro.setAutor(sc.nextLine());
+    }
+    public void ModificarAnoPub(Libro libro) {
+        System.out.println("Introduce el nuevo año de publicacion: ");
+        int anoPub = Integer.parseInt(sc.nextLine());
+        while(anoPub <= 1000 || anoPub > 2025) {
+            System.out.println("El año es invalido, vuelve a intentar");
+            anoPub = Integer.parseInt(sc.nextLine());
+        }
+        libro.setAnoPub(anoPub);
+    }
+    public void ModificarNumPag(Libro libro) {
+        System.out.println("Introduce el nuevo numero de paginas: ");
+        int numPag = Integer.parseInt(sc.nextLine());
+        while(numPag < 1) {
+            System.out.println("El numero de paginas es invalido, vuelve a intentarlo");
+            numPag = Integer.parseInt(sc.nextLine());
+        }
+        libro.setNumPag(numPag);
+    }
+    public void ModificarPrecio(Libro libro) {
+        System.out.println("Introduce el nuevo precio: ");
+        double precio = Double.parseDouble(sc.nextLine());
+        while(precio < 1) {
+            System.out.println("El precio es invalido, vuelve a intentar");
+            precio = Double.parseDouble(sc.nextLine());
+        }
+        libro.setPrecio(precio);
+    }
 }
