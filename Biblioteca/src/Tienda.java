@@ -75,9 +75,22 @@ public class Tienda {
         MostrarLibroAbreviado();
         System.out.println("Elige el libro que quieres modificar: ");
         int pos = Integer.parseInt(sc.nextLine());
-        libros.get(pos-1);
-        do {
+        while(pos > libros.size()) {
+            System.out.println("Posicion invalida");
+            pos = Integer.parseInt(sc.nextLine());
+        }
 
+        Libro elegido = libros.get(pos-1);
+
+        do {
+            Menu2();
+            System.out.println("Elige que dato quieres modificar (o 6 para volver): ");
+            int opcion = Integer.parseInt(sc.nextLine());
+            switch (opcion) {
+                case 1:
+                    ModificarTitulo(elegido);
+                    break;
+            }
         } while(pos != 6);
     }
     public void ModificarTitulo(Libro libro) {
