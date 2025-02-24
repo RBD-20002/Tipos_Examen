@@ -55,10 +55,7 @@ public class Libro {
     }
 
     public static boolean ValidarAnoPub(int anoPub) {
-        if(anoPub >= 1000 && anoPub <= 2025) {
-            return true;
-        }
-        return false;
+        return anoPub >= 1000 && anoPub <= 2025;
     }
     public static boolean ValidarNumPag(int numPag) {
         if(numPag <= 0) {
