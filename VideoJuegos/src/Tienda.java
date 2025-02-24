@@ -14,7 +14,7 @@ public class Tienda {
         System.out.println("|3. Lista de VideoJuegos |"); /*H*/
         System.out.println("|4. Eliminar VideoJuego  |"); /*H*/
         System.out.println("|5. Editar VideoJuego    |");
-        System.out.println("|6. Filtrar por titulo   |");
+        System.out.println("|6. Filtrar por titulo   |"); /*H*/
         System.out.println("|7. Numero de VideoJuegos|"); /*H*/
         System.out.println("|8. Salir                |");
         System.out.println("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
@@ -76,6 +76,18 @@ public class Tienda {
     }
 
     public void FiltrarPorTitulo() {
+        System.out.println("Introduce el titulo de videojuego: ");
+        String tituloPro = sc.nextLine();
 
+        boolean encontrado = false;
+        for(int i = 0; i < juegos.size(); i++) {
+            if(juegos.get(i).getTitulo().toLowerCase().contains(tituloPro)) {
+                System.out.println((i+1)+" "+juegos.get(i).getTitulo()+" $"+ juegos.get(i).getPrecio());
+                encontrado = true;
+            }
+        }
+        if(!encontrado) {
+            System.out.println("No se encuentran videojuegos con la palabra "+tituloPro);
+        }
     }
 }
