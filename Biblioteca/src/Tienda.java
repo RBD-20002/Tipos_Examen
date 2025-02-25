@@ -129,6 +129,10 @@ public class Tienda {
     }
 
     public void EditarDatosLibros() {
+        if(libros.isEmpty()) {
+            System.out.println("No hay libros para editar");
+            return;
+        }
         System.out.println("Libros: ");
         MostrarLibroAbreviado();
         int pos2 = -1;

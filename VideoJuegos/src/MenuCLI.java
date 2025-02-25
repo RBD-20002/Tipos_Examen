@@ -39,6 +39,7 @@ public class MenuCLI {
                 default:
                     System.out.println("Opcion invalida");
                     break;
+
             }
         } while (opcion != 8);
     }
