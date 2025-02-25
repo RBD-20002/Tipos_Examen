@@ -185,7 +185,7 @@ public class Tienda {
 
     public void MostrarEnum() {
         for(int i = 0; i < Juego.Plataforma.values().length; i++ ) {
-            System.out.println((i+1)+" "+ Arrays.toString(Juego.Plataforma.));
+            System.out.println((i+1)+" "+ Juego.Plataforma.values()[i]);
         }
     }
 
