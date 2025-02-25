@@ -18,6 +18,7 @@ public class Tienda {
         System.out.println("|7. Salir                |"); /*H*/
         System.out.println(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
     }
+
     public void Menu2() {
         System.out.println("|   MODIFICAR DATOS   |");
         System.out.println("|1. Titulo            |"); /*H*/
@@ -36,15 +37,14 @@ public class Tienda {
             System.out.println(libro.toString());
         }
     }
+
     public void MostrarLibroAbreviado() {
         if(libros.isEmpty()) {
             System.out.println("No hay libros para editar");
         }
-        int pos = 0;
-        for (Libro libro : libros) {
-            System.out.println(pos + " " + libro.getTitulo());
-            pos++;
-        }
+        /*int pos = 0;
+        for (Libro libro : libros) { System.out.println(pos + " " + libro.getTitulo());
+            pos++; }*/
         for(int i = 0; i < libros.size(); i++) {
             System.out.println((i+1)+" "+libros.get(i).getTitulo()+" $"+libros.get(i).getPrecio());
         }
@@ -218,7 +218,7 @@ public class Tienda {
                 System.out.println("Introduce el nuevo precio: ");
                 precio = Double.parseDouble(sc.nextLine());
                 if(precio < 1) {
-                    System.out.println("El precio ");
+                    System.out.println("El precio es invalido ");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("ERROR: Ingresa un precio valido");

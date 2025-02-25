@@ -13,7 +13,7 @@ public class MenuCLI {
             opcion = Integer.parseInt(sc.nextLine());
             switch (opcion) {
                 case 1:
-
+                    tienda.AgregarVideoJuego();
                     break;
                 case 2:
                     tienda.MostrarJuegos();

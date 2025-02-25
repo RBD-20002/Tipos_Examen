@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Tienda {
@@ -30,16 +29,6 @@ public class Tienda {
         System.out.println("|4. Precio            |"); /*H*/
         System.out.println("|5. Volver atras      |"); /*H*/
         System.out.println("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
-    }
-
-    public void Menu3() {
-        System.out.println("|PLATAFORMAS|");
-        System.out.println("|1. PS3     |"); /*H*/
-        System.out.println("|2. PS2     |"); /*H*/
-        System.out.println("|3. Switch  |"); /*H*/
-        System.out.println("|4. PC      |"); /*H*/
-        System.out.println("|5. Nintendo|"); /*H*/
-        System.out.println("|6. Cancelar|"); /*H*/
     }
 
     public void MostrarJuegos() {
@@ -75,6 +64,8 @@ public class Tienda {
                 System.out.println("ERROR: Dato invalido, vuelve a intentar");
             }
         }
+        juegos.remove(pos - 1);
+        System.out.println("Juego eliminado correctamente");
     }
 
     public void NumeroDeJuegos() {
@@ -199,6 +190,67 @@ public class Tienda {
     }
 
     public void AgregarVideoJuego() {
+        String titulo = IngresarTitulo();
+        int anoPub = IngresarAnoPub();
+        Juego.Plataforma plataforma = IngresarPlataforma();
+        double precio = IngresarPrecio();
+        juegos.add(new Juego(titulo,anoPub,plataforma,precio));
+    }
 
+    public String IngresarTitulo() {
+        System.out.println("Ingresa el titulo: ");
+        String titulo = sc.nextLine();
+        return titulo;
+    }
+
+    public int IngresarAnoPub() {
+        int anoPub = 0;
+        while(anoPub < 1984) {
+            try {
+                System.out.println("Introduce el año de publicacion: ");
+                anoPub = Integer.parseInt(sc.nextLine());
+                if(anoPub < 1984) {
+                    System.out.println("El año de publicacion es invalido");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un numero valido");
+            }
+        }
+        return anoPub;
+    }
+
+    public Juego.Plataforma IngresarPlataforma() {
+        System.out.println("Selecciona una plataforma: ");
+        MostrarEnum();
+
+        int opcion = -1;
+        while(opcion < 1 || opcion > Juego.Plataforma.values().length) {
+            try {
+                System.out.println("Ingresa el numero de la plataforma: ");
+                opcion = Integer.parseInt(sc.nextLine());
+                if(opcion < 1 || opcion > Juego.Plataforma.values().length) {
+                    System.out.println("Numero invalido, vuelve a intentar");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un numero valido");
+            }
+        }
+        return Juego.Plataforma.values()[opcion-1];
+    }
+
+    public Double IngresarPrecio() {
+        double precio = 0;
+        while(precio < 1) {
+            try {
+                System.out.println("Introduce el precio del juego: ");
+                precio = Double.parseDouble(sc.nextLine());
+                if(precio < 1) {
+                    System.out.println("El precio es invalido");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un dato valido");
+            }
+        }
+        return precio;
     }
 }
