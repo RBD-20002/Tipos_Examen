@@ -32,6 +32,7 @@ public class Tienda {
     public void MostrarLibros() {
         if(libros.isEmpty()) {
             System.out.println("No hay libros para mostrar");
+            return;
         }
         for(Libro libro : libros) {
             System.out.println(libro.toString());
@@ -41,10 +42,8 @@ public class Tienda {
     public void MostrarLibroAbreviado() {
         if(libros.isEmpty()) {
             System.out.println("No hay libros para editar");
+            return;
         }
-        /*int pos = 0;
-        for (Libro libro : libros) { System.out.println(pos + " " + libro.getTitulo());
-            pos++; }*/
         for(int i = 0; i < libros.size(); i++) {
             System.out.println((i+1)+" "+libros.get(i).getTitulo()+" $"+libros.get(i).getPrecio());
         }

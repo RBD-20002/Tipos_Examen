@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Tienda {
@@ -32,12 +33,20 @@ public class Tienda {
     }
 
     public void MostrarJuegos() {
+        if(juegos.isEmpty()) {
+            System.out.println("No hay juegos para ejecutar una accion");
+            return;
+        }
         for(int i = 0; i < juegos.size(); i++) {
             System.out.println((i+1)+" "+juegos.get(i).toString());
         }
     }
 
     public void ListaDeVideoJuegos() {
+        if(juegos.isEmpty()) {
+            System.out.println("No hay juegos para ejecutar una accion");
+            return;
+        }
         for(int i = 0; i < juegos.size(); i++) {
             System.out.println((i+1)+" "+juegos.get(i).getTitulo()+" $"+juegos.get(i).getPrecio());
         }
@@ -46,6 +55,7 @@ public class Tienda {
     public void EliminarVideoJuego() {
         if(juegos.isEmpty()) {
             System.out.println("No hay juegos para ejecutar una accion");
+            return;
         }
         ListaDeVideoJuegos();
 
@@ -71,6 +81,10 @@ public class Tienda {
     }
 
     public void FiltrarPorTitulo() {
+        if(juegos.isEmpty()) {
+            System.out.println("No hay juegos para ejecutar una accion");
+            return;
+        }
         VerificarAlmacen();
 
         System.out.println("Introduce el titulo de videojuego: ");
@@ -91,6 +105,7 @@ public class Tienda {
     public void EditarVideoJuego() {
         if(juegos.isEmpty()) {
             System.out.println("No hay juegos para ejecutar una accion");
+            return;
         }
         System.out.println("VideoJuegos: ");
         ListaDeVideoJuegos();
@@ -170,7 +185,7 @@ public class Tienda {
 
     public void MostrarEnum() {
         for(int i = 0; i < Juego.Plataforma.values().length; i++ ) {
-            System.out.println((i+1)+" "+Juego.Plataforma.values());
+            System.out.println((i+1)+" "+ Arrays.toString(Juego.Plataforma.));
         }
     }
 

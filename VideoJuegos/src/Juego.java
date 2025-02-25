@@ -52,7 +52,7 @@ public class Juego {
         sb.append("VideoJuego: ")
                 .append("\n Titulo: ").append(titulo)
                 .append("\n Año de publicacion: ").append(anoPub)
-                .append("\n Plataforma: ").append(plataforma)
+                .append("\n Plataforma: ").append(plataforma.toString())
                 .append("\n Precio: ").append(precio);
         return sb.toString();
     }

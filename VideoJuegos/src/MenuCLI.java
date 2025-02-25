@@ -35,8 +35,10 @@ public class MenuCLI {
                     break;
                 case 8:
                     System.out.println("Adios, vuelva pronto");
+                    break;
                 default:
                     System.out.println("Opcion invalida");
+                    break;
             }
         } while (opcion != 8);
     }
