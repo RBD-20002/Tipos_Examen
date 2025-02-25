@@ -4,7 +4,7 @@ public class Juego {
     private Plataforma plataforma;
     private double precio;
 
-    private enum Plataforma {
+    public enum Plataforma {
         PS3,PS2,SWITCH,PC,NINTENDO
     }
 
@@ -34,7 +34,7 @@ public class Juego {
     public Plataforma getPlataforma() {
         return  plataforma;
     }
-    public void setPrecio(Plataforma plataforma) {
+    public void setPlataforma(Plataforma plataforma) {
         this.plataforma = plataforma;
     }
 
