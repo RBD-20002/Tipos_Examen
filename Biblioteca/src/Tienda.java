@@ -231,6 +231,10 @@ public class Tienda {
     }
 
     public void FiltrarPorTitulo() {
+        if(libros.isEmpty()) {
+            System.out.println("No hay libros");
+            return;
+        }
         System.out.println("Introduce un titulo: ");
         String tituloPro = sc.nextLine().toLowerCase();
 
