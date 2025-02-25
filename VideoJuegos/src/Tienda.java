@@ -32,30 +32,21 @@ public class Tienda {
     }
 
     public void MostrarJuegos() {
-        VerificarAlmacen();
-        /*if(juegos.isEmpty()) {
-            System.out.println("No hay juegos que mostrar");
-        }*/
         for(int i = 0; i < juegos.size(); i++) {
             System.out.println((i+1)+" "+juegos.get(i).toString());
         }
     }
 
     public void ListaDeVideoJuegos() {
-        VerificarAlmacen();
-        /*if(juegos.isEmpty()) {
-            System.out.println("No hay juegos para listar");
-        }*/
         for(int i = 0; i < juegos.size(); i++) {
             System.out.println((i+1)+" "+juegos.get(i).getTitulo()+" $"+juegos.get(i).getPrecio());
         }
     }
 
     public void EliminarVideoJuego() {
-        VerificarAlmacen();
-        /*(if juegos.isEmpty()) {
-            System.out.println("No hay juegos para eliminar")
-         */
+        if(juegos.isEmpty()) {
+            System.out.println("No hay juegos para ejecutar una accion");
+        }
         ListaDeVideoJuegos();
 
         int pos = -1;
@@ -98,7 +89,9 @@ public class Tienda {
     }
 
     public void EditarVideoJuego() {
-        VerificarAlmacen();
+        if(juegos.isEmpty()) {
+            System.out.println("No hay juegos para ejecutar una accion");
+        }
         System.out.println("VideoJuegos: ");
         ListaDeVideoJuegos();
         int pos2 = -1;
@@ -267,7 +260,6 @@ public class Tienda {
     public void VerificarAlmacen() {
         if(juegos.isEmpty()) {
             System.out.println("No hay juegos para ejecutar una accion");
-            return;
         }
     }
 }
