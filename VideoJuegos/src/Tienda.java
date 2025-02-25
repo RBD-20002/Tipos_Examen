@@ -143,4 +143,14 @@ public class Tienda {
             }
         } while(opcion != 5);
     }
+
+    public void ModificarTitulo(Juego juego){
+        System.out.println("Introduce el nuemvo titulo: ");
+        juego.setTitulo(sc.nextLine());
+        System.out.println("Dato modificaco correctamente");
+    }
+
+    public void ModificarAnoPub(Juego juego) {
+
+    }
 }
