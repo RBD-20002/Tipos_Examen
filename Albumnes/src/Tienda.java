@@ -167,15 +167,25 @@ public class Tienda {
     }
 
     public String IngresarTitulo() {
-        System.out.println("Ingresa un titulo:");
-        String titulo = sc.nextLine();
-        return titulo;
+        String titulo = "";
+        while(titulo.isBlank()) {
+            System.out.println("Introduce el titulo: ");
+            titulo = sc.nextLine();
+            if(titulo.isBlank()) {
+                System.out.println("El dato no puede estar en blanco");
+            }
+        } return titulo;
     }
 
     public String IngresarArtistas() {
-        System.out.println("Ingresa un artista:");
-        String artistas = sc.nextLine();
-        return artistas;
+        String artistas = "";
+        while(artistas.isBlank()) {
+            System.out.println("Introduce los nombres de artistas: ");
+            artistas = sc.nextLine();
+            if(artistas.isBlank()) {
+                System.out.println("El dato no puede estar en blanco");
+            }
+        } return artistas;
     }
 
     public int IngresarAnoPub() {

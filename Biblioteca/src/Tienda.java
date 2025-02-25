@@ -70,64 +70,6 @@ public class Tienda {
         System.out.println("Libro eliminado correctamente");
     }
 
-    public void AgregarLibro() {
-        System.out.println("Introduce el titulo del libro: ");
-        String titulo = sc.nextLine();
-        System.out.println("-".repeat(30));
-
-        System.out.println("Introduce el autor del libro: ");
-        String autor = sc.nextLine();
-        System.out.println("-".repeat(30));
-
-        int anoPub = 0;
-        while(anoPub < 1000 || anoPub > 2025) {
-            try {
-                System.out.println("Introduce el año de publicacion: ");
-                anoPub = Integer.parseInt(sc.nextLine());
-                if(anoPub < 1000 || anoPub > 2025) {
-                    System.out.println("El año es invalido, intenta de nuevo");
-                    System.out.println("-".repeat(30));
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("ERROR: Ingresa un año valido");
-            }
-        }
-        System.out.println("-".repeat(30));
-
-        int numPag = 0;
-        while(numPag < 1) {
-            try {
-                System.out.println("Introduce el numero de paginas: ");
-                numPag = Integer.parseInt(sc.nextLine());
-                if(numPag < 1) {
-                    System.out.println("El numero de paginas es invalido, intenta de nuevo");
-                    System.out.println("-".repeat(30));
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("ERROR: Ingresa un numero valido");
-            }
-        }
-        System.out.println("-".repeat(30));
-
-        double precio = 0;
-        while(precio < 1) {
-            try {
-                System.out.println("Introduce el precio del libro: ");
-                precio = Double.parseDouble(sc.nextLine());
-                if(precio < 1) {
-                    System.out.println("El precio es invalido, intenta de nuevo");
-                    System.out.println("-".repeat(30));
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("ERROR: Ingresa un precio valido");
-            }
-        }
-        System.out.println("-".repeat(30));
-
-        System.out.println("Libro creado correctamente");
-        libros.add(new Libro(titulo,autor,anoPub,numPag,precio));
-    }
-
     public void EditarDatosLibros() {
         if(libros.isEmpty()) {
             System.out.println("No hay libros para editar");
@@ -256,5 +198,81 @@ public class Tienda {
 
     public void NumeroDeLibros() {
         System.out.println("El numero de libros es: "+libros.size());
+    }
+
+    public void AgregarLibro() {
+        String titulo = AgregarTitulo();
+        String autor = AgregarAutor();
+        int anoPub = AgregarAnoPub();
+        int numPag = AgregarNumPag();
+        double precio = AgregarPrecio();
+        libros.add(new Libro(titulo,autor,anoPub,numPag,precio));
+    }
+
+    public String AgregarTitulo() {
+        String titulo = "";
+        while(titulo.isBlank()) {
+            System.out.println("Introduce el titulo: ");
+            titulo = sc.nextLine();
+            if(titulo.isBlank()) {
+                System.out.println("El dato no puede estar en blanco");
+            }
+        } return titulo;
+    }
+
+    public String AgregarAutor() {
+        String autor = "";
+        while(autor.isBlank()) {
+            System.out.println("Introduce a los artistas: ");
+            autor = sc.nextLine();
+            if(autor.isBlank()) {
+                System.out.println("El dato no puede estar en blanco");
+            }
+        } return autor;
+    }
+
+    public int AgregarAnoPub() {
+        int anoPub = 0;
+        while(anoPub < 1000 || anoPub > 2025) {
+            try {
+                System.out.println("Introduce el nuevo año de publicacion: ");
+                anoPub = Integer.parseInt(sc.nextLine());
+                if(anoPub < 1000 || anoPub > 2025) {
+                    System.out.println("El año es invalido, intenta de nuevo");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un numero valido");
+            }
+        } return anoPub;
+    }
+
+    public int AgregarNumPag() {
+        int numPag = 0;
+        while(numPag < 1) {
+            try {
+                System.out.println("Introduce el nuevo numero de paginas: ");
+                numPag = Integer.parseInt(sc.nextLine());
+                if(numPag < 0) {
+                    System.out.println("El numero de paginas es invalido");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un numero valido");
+            }
+        } return numPag;
+    }
+
+    public double AgregarPrecio() {
+        double precio = 0;
+        while(precio < 1) {
+            try {
+                System.out.println("Introduce el nuevo precio: ");
+                precio = Double.parseDouble(sc.nextLine());
+                if(precio < 1) {
+                    System.out.println("El precio es invalido ");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Ingresa un precio valido");
+            }
+        } return precio;
     }
 }

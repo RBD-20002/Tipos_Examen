@@ -85,7 +85,6 @@ public class Tienda {
             System.out.println("No hay juegos para ejecutar una accion");
             return;
         }
-        VerificarAlmacen();
 
         System.out.println("Introduce el titulo de videojuego: ");
         String tituloPro = sc.nextLine();
@@ -216,9 +215,14 @@ public class Tienda {
     }
 
     public String IngresarTitulo() {
-        System.out.println("Ingresa el titulo: ");
-        String titulo = sc.nextLine();
-        return titulo;
+        String titulo = "";
+        while(titulo.isBlank()) {
+            System.out.println("Introduce el titulo: ");
+            titulo = sc.nextLine();
+            if(titulo.isBlank()) {
+                System.out.println("El dato no se puede dejar en blanco");
+            }
+        } return titulo;
     }
 
     public int IngresarAnoPub() {
@@ -272,9 +276,4 @@ public class Tienda {
         return precio;
     }
 
-    public void VerificarAlmacen() {
-        if(juegos.isEmpty()) {
-            System.out.println("No hay juegos para ejecutar una accion");
-        }
-    }
 }
