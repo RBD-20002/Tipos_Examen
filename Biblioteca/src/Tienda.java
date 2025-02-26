@@ -50,10 +50,10 @@ public class Tienda {
     }
 
     public void EliminarLibro() {
-        MostrarLibroAbreviado();
         if(libros.isEmpty()) {
             return;
         }
+        MostrarLibroAbreviado();
         int pos = -1;
         while(pos < 1 || pos > libros.size()) {
             try{
