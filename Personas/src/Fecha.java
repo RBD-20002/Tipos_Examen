@@ -80,8 +80,8 @@ public class Fecha {
     }
 
     /**
-     * Método que aumenta nuestro objeto Fecha al día siguiente, comprobando en cada cambio de día que la nueva
-     * fecha es correcta, para ello utilizamos el método estático fechaCorrecta(Fecha fecha) pasándole
+     * Metodo que aumenta nuestro objeto Fecha al día siguiente, comprobando en cada cambio de día que la nueva
+     * fecha es correcta, para ello utilizamos el metodo estatico fechaCorrecta(Fecha fecha) pasandole
      * la referencia 'this' del propio objeto que hace la llamada
      */
     public void diaSiguiente() {
