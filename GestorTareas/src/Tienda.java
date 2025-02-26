@@ -11,9 +11,10 @@ public class Tienda {
         System.out.println("|     GESTOR TAREAS     |");
         System.out.println("|1. Agregar tarea       |");
         System.out.println("|2. Mostrar tareas      |"); /*H*/
-        System.out.println("|3. Marcar tarea hecha  |"); /*H*/
-        System.out.println("|4. Eliminar tarea      |"); /*H*/
-        System.out.println("|5. Salir               |"); /*H*/
+        System.out.println("|3. Mostrar estado tarea|");
+        System.out.println("|4. Marcar tarea hecha  |"); /*H*/
+        System.out.println("|5. Eliminar tarea      |"); /*H*/
+        System.out.println("|6. Salir               |"); /*H*/
         System.out.println("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
     }
 
@@ -75,6 +76,18 @@ public class Tienda {
         } while(opcion != 3);
     }
 
+    public void MostrarTareaEstado() {
+        if(tareas.isEmpty()) {
+            System.out.println("No hay tareas para mostrar");
+            return;
+        }
+        for (int i = 0; i < tareas.size(); i++) {
+            Tarea tarea = tareas.get(i); // Obtener la tarea actual
+            String estado = tarea.isCompletado() ? "Tarea completada" : "Tarea sin finalizar";
+            System.out.println((i + 1) + ". " + tarea.getTarea() + " - " + estado);
+        }
+    }
+
     public int EscogerTarea() {
         int pos = -1;
         while(pos < 1 || pos > tareas.size()) {
@@ -88,5 +101,9 @@ public class Tienda {
                 System.out.println("ERROR: Ingresa un dato valido");
             }
         } return  (pos-1);
+    }
+
+    public void AgregarTarea() {
+        String
     }
 }
