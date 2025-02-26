@@ -7,7 +7,7 @@ public class Tarea {
     public Tarea(int id, String tarea, boolean completado) {
         this.id = id;
         this.tarea = tarea;
-        this.completado = completado;
+        this.completado = false;
     }
 
     public int getId() {
