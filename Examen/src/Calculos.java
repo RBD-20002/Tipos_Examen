@@ -131,22 +131,27 @@ public class Calculos {
     }
 
     public void MejorAlumno() {
-        if(alumnos.isEmpty()) {
-            System.out.println("No hay aun ningun alumno almacenado");
+        if (alumnos.isEmpty()) {
+            System.out.println("No hay ningún alumno almacenado.");
             return;
         }
-        /*
-        Alumno aux = alumnos.get(0);
-        double mediaAux = (alumnos.get(0).getNota1()+ alumnos.get(0).getNota2()+alumnos.get(0).getNota3()+alumnos.get(0).getNota4());
-        for(int i = 0; i < alumnos.size(); i++) {
-            aux = alumnos.get(0);
-            if(mediaAux < alumnos.get(i).getNota1()+ alumnos.get(i).getNota2()+alumnos.get(i).getNota3()+alumnos.get(i).getNota4()) {
-                aux = alumnos.get(i);
-            } else {
-                aux = alumnos.get(i+1);
+
+        Alumno mejorAlumno = alumnos.get(0);
+        double mejorPromedio = (mejorAlumno.getNota1() + mejorAlumno.getNota2() +
+                mejorAlumno.getNota3() + mejorAlumno.getNota4()) / 4;
+
+        for (Alumno alumno : alumnos) {
+            double promedioActual = (alumno.getNota1() + alumno.getNota2() +
+                    alumno.getNota3() + alumno.getNota4()) / 4;
+            if (promedioActual > mejorPromedio) {
+                mejorAlumno = alumno;
+                mejorPromedio = promedioActual;
             }
-        }*/
-        System.out.println("Lo intente, pero no lo logre");
+        }
+
+        System.out.println("\nMejor Alumno:");
+        System.out.println(mejorAlumno);
+        System.out.println("📊 Promedio: " + String.format("%.2f", mejorPromedio));
     }
 
 }
