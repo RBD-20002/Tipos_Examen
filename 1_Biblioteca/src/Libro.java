@@ -55,13 +55,12 @@ public class Libro {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Libro: ")
-                .append("\n Titulo: ").append(titulo)
-                .append("\n Autor: ").append(autor)
-                .append("\n Año de publicacion: ").append(anoPub)
-                .append("\n Numero de paginas: ").append(numPag)
-                .append("\n Precio: ").append(precio);
-        return sb.toString();
+        String sb = "Libro: " +
+                "\n Titulo: " + titulo +
+                "\n Autor: " + autor +
+                "\n Año de publicacion: " + anoPub +
+                "\n Numero de paginas: " + numPag +
+                "\n Precio: " + precio;
+        return sb;
     }
 }

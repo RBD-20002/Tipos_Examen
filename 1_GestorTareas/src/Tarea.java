@@ -32,11 +32,10 @@ public class Tarea {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Tarea: ")
-                .append("\n ID: ").append(id)
-                .append("\n Tarea: ").append(tarea)
-                .append("\n Estado: ").append(completado);
-        return sb.toString();
+        String sb = "Tarea: " +
+                "\n ID: " + id +
+                "\n Tarea: " + tarea +
+                "\n Estado: " + completado;
+        return sb;
     }
 }

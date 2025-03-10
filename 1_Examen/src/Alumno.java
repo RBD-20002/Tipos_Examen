@@ -1,5 +1,3 @@
-import java.util.Locale;
-
 public class Alumno {
 
     private String nombre;
@@ -65,12 +63,11 @@ public class Alumno {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(capitalize(apellidos)).append(", ").append(capitalize(nombre))
-                .append("\nTema 1: ").append(String.format("%.2f",nota1))
-                .append("\nTema 2: ").append(String.format("%.2f",nota2))
-                .append("\nTema 3: ").append(String.format("%.2f",nota3))
-                .append("\nTema 4: ").append(String.format("%.2f",nota4));
-        return sb.toString();
+        String sb = capitalize(apellidos) + ", " + capitalize(nombre) +
+                "\nTema 1: " + String.format("%.2f", nota1) +
+                "\nTema 2: " + String.format("%.2f", nota2) +
+                "\nTema 3: " + String.format("%.2f", nota3) +
+                "\nTema 4: " + String.format("%.2f", nota4);
+        return sb;
     }
 }

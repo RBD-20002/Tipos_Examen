@@ -45,12 +45,11 @@ public class Album {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Album: ")
-                .append("\n Titulo: ").append(titulo)
-                .append("\n Artistas: ").append(artistas)
-                .append("\n Año de publicacion: ").append(anoPub)
-                .append("\n Cantidad de canciones: ").append(numCan);
-        return sb.toString();
+        String sb = "Album: " +
+                "\n Titulo: " + titulo +
+                "\n Artistas: " + artistas +
+                "\n Año de publicacion: " + anoPub +
+                "\n Cantidad de canciones: " + numCan;
+        return sb;
     }
 }

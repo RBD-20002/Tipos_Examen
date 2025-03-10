@@ -48,13 +48,12 @@ public class Juego {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("VideoJuego: ")
-                .append("\n Titulo: ").append(titulo)
-                .append("\n Año de publicacion: ").append(anoPub)
-                .append("\n Plataforma: ").append(plataforma.toString())
-                .append("\n Precio: ").append(precio);
-        return sb.toString();
+        String sb = "VideoJuego: " +
+                "\n Titulo: " + titulo +
+                "\n Año de publicacion: " + anoPub +
+                "\n Plataforma: " + plataforma.toString() +
+                "\n Precio: " + precio;
+        return sb;
     }
 
 }
