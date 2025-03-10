@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Alumno {
 
     private String nombre;
@@ -58,9 +60,13 @@ public class Alumno {
         this.nota4 = nota4;
     }
 
+    public String capitalize(String s) {
+        return s.substring(0,1).toUpperCase()+s.substring(1).toLowerCase();
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(apellidos).append(", ").append(nombre)
+        sb.append(capitalize(apellidos)).append(", ").append(capitalize(nombre))
                 .append("\nTema 1: ").append(String.format("%.2f",nota1))
                 .append("\nTema 2: ").append(String.format("%.2f",nota2))
                 .append("\nTema 3: ").append(String.format("%.2f",nota3))
