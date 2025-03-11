@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/1_GestorTareas/1_GestorTareas.iml" filepath="$PROJECT_DIR$/1_GestorTareas/1_GestorTareas.iml" />
       <module fileurl="file://$PROJECT_DIR$/1_Personas/1_Personas.iml" filepath="$PROJECT_DIR$/1_Personas/1_Personas.iml" />
       <module fileurl="file://$PROJECT_DIR$/1_VideoJuegos/1_VideoJuegos.iml" filepath="$PROJECT_DIR$/1_VideoJuegos/1_VideoJuegos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2_Vehiculo/2_Vehiculo.iml" filepath="$PROJECT_DIR$/2_Vehiculo/2_Vehiculo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tipos_Examen.iml" filepath="$PROJECT_DIR$/Tipos_Examen.iml" />
     </modules>
   </component>
