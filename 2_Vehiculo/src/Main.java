@@ -5,10 +5,10 @@ public class Main {
         Motor motorCamion = new Motor(5000, 300);
         Coche coche = new Coche("Seat", "Ibiza", 5, motorCoche);
         Camion camion = new Camion("Mercedes", "Actros", 20000, motorCamion);
-        Bicicleta bicicleta = new Bicicleta("Orbea", "Alma", Bicicleta.Tipo.MONTANA);
+
         taller.anadirVehiculo(coche);
         taller.anadirVehiculo(camion);
-        taller.anadirVehiculo(bicicleta);
+
         taller.repararVehiculo();
     }
 }
