@@ -12,7 +12,6 @@ public class Camion extends Vehiculo {
     public Motor getMotor() {
         return motor;
     }
-
     public void setMotor(Motor motor) {
         this.motor = motor;
     }
@@ -20,7 +19,6 @@ public class Camion extends Vehiculo {
     public double getCargaMax() {
         return cargaMax;
     }
-
     public void setCargaMax(double cargaMax) {
         this.cargaMax = cargaMax;
     }

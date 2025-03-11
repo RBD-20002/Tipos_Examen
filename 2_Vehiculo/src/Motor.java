@@ -11,7 +11,6 @@ public class Motor {
     public double getPotencia() {
         return potencia;
     }
-
     public void setPotencia(double potencia) {
         this.potencia = potencia;
     }
@@ -19,7 +18,6 @@ public class Motor {
     public double getCilindrada() {
         return cilindrada;
     }
-
     public void setCilindrada(double cilindrada) {
         this.cilindrada = cilindrada;
     }

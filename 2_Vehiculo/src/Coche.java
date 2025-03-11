@@ -12,7 +12,6 @@ public class Coche extends Vehiculo {
     public int getNumPuertas() {
         return numPuertas;
     }
-
     public void setNumPuertas(int numPuertas) {
         this.numPuertas = numPuertas;
     }
@@ -20,7 +19,6 @@ public class Coche extends Vehiculo {
     public Motor getMotor() {
         return motor;
     }
-
     public void setMotor(Motor motor) {
         this.motor = motor;
     }

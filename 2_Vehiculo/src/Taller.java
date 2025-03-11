@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Taller {
 
-    private ArrayList<Vehiculo> Vehiculos;
+    private final ArrayList<Vehiculo> Vehiculos;
 
-    public void Taller() {
+    public Taller() {
         Vehiculos = new ArrayList<>();
     }
 
