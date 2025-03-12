@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/1_Personas/1_Personas.iml" filepath="$PROJECT_DIR$/1_Personas/1_Personas.iml" />
       <module fileurl="file://$PROJECT_DIR$/1_VideoJuegos/1_VideoJuegos.iml" filepath="$PROJECT_DIR$/1_VideoJuegos/1_VideoJuegos.iml" />
       <module fileurl="file://$PROJECT_DIR$/2_Figura/2_Figura.iml" filepath="$PROJECT_DIR$/2_Figura/2_Figura.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2_FigurasInterfaz/2_FigurasInterfaz.iml" filepath="$PROJECT_DIR$/2_FigurasInterfaz/2_FigurasInterfaz.iml" />
       <module fileurl="file://$PROJECT_DIR$/2_Vehiculo/2_Vehiculo.iml" filepath="$PROJECT_DIR$/2_Vehiculo/2_Vehiculo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tipos_Examen.iml" filepath="$PROJECT_DIR$/Tipos_Examen.iml" />
     </modules>
